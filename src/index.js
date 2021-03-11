@@ -3,7 +3,7 @@ module.exports = function toReadable (number) {
           if (number === 0) return 'zero';
 
           var ONES = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
-          var TENS = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+          var TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
           var SCALE = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion'];
 
           // Return string of first three digits, padded with zeros if needed
@@ -23,7 +23,7 @@ module.exports = function toReadable (number) {
 
           // Add to words, triplet words with scale word
           function add_to_words(words, triplet_words, scale_word) {
-              return triplet_words ? triplet_words + (scale_word && ' ' + scale_word || '') + ' ' + words : words;
+              return triplet_words ? triplet_words + (scale_word && '' + scale_word || '') + '' + words : words;
           }
 
           function iter(words, i, first, rest) {
